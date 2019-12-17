@@ -49,18 +49,6 @@ router.post("/createLesson", (req, res) => {
   }
 });
 
-router.post("/createEvent", (req, res) => {
-  const { title, description, geoLocation } = req.body;
-
-  Lesson.create({
-    creatorIdUser: new mongoose.Types.ObjectId(req.user._id),
-    title,
-    description,
-    geoLocation
-  })
-    .then(us => res.status(200).json(us))
-    .catch(error => console.log(error));
-});
 // Edit and Delete Lessons
 
 router.post("/edit", (req, res) => {
@@ -72,21 +60,6 @@ router.post("/edit", (req, res) => {
       description,
       location,
       participants
-    },
-    { new: true }
-  )
-    .then(theNewLesson => res.json(theNewLesson))
-    .catch(err => console.log("error!!", err));
-});
-
-router.post("/editEvent", (req, res) => {
-  const { title, description, geoLocation } = req.body;
-  Lesson.findByIdAndUpdate(
-    req.body.id,
-    {
-      title,
-      description,
-      geoLocation
     },
     { new: true }
   )
