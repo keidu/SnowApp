@@ -9,6 +9,7 @@ router.get("/getAllLessons", (req, res) => {
   Lesson.find()
     .populate("creatorIdTeacher", "email")
     .populate("creatorIdUser", "email")
+    .populate("participantsRef")
     .then(AllLessons => {
       res.json(AllLessons);
     })
@@ -25,6 +26,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/createLesson", (req, res) => {
   const { title, description, location, participants, date } = req.body;
+  console.log(req.body);
 
   if (req.user.role !== "Teacher") {
     Lesson.create({
@@ -62,7 +64,7 @@ router.post("/edit", (req, res) => {
       description,
       location,
       participants,
-      date,
+      date
     },
     { new: true }
   )
@@ -70,10 +72,24 @@ router.post("/edit", (req, res) => {
     .catch(err => console.log("error!!", err));
 });
 
-router.post("/signUp", (req, res) => {
-  const { participants } = req.body;
-  Lesson.findByIdAndUpdate(req.body.id, { participants }, { new: true })
+router.post("/signup", (req, res) => {
+  Lesson.findByIdAndUpdate(
+    req.body.id,
+    {
+      $addToSet: {
+        participantsRef: req.user._id
+      }
+    },
+    { new: true }
+  )
+    .populate("participantsRef")
     .then(theNewLesson => res.json(theNewLesson))
+    .catch(err => console.log("error!!", err));
+});
+
+router.get("/updateParticipants", (req, res) => {
+  Lesson.findById(req.body.id)
+    .then(theLesson => res.json(theLesson))
     .catch(err => console.log("error!!", err));
 });
 

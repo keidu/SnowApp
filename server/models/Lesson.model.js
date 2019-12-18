@@ -15,8 +15,13 @@ const lessonSchema = Schema(
     description: String,
     location: String,
     participants: Number,
-    signedUpUsers: [],
-    date: Date
+    date: Date,
+    participantsRef: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+      }
+    ]
   },
   {
     timestamps: true
