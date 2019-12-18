@@ -15,7 +15,8 @@ const lessonSchema = Schema(
     description: String,
     location: String,
     participants: Number,
-    geoLocation: { type: { type: String }, coordinates: [Number] }
+    signedUpUsers: [],
+    date: Date
   },
   {
     timestamps: true

@@ -24,7 +24,7 @@ router.get("/:id", (req, res) => {
 // Create Lessons
 
 router.post("/createLesson", (req, res) => {
-  const { title, description, location, participants } = req.body;
+  const { title, description, location, participants, date } = req.body;
 
   if (req.user.role !== "Teacher") {
     Lesson.create({
@@ -32,7 +32,8 @@ router.post("/createLesson", (req, res) => {
       title,
       description,
       location,
-      participants
+      participants,
+      date
     })
       .then(us => res.status(200).json(us))
       .catch(error => console.log(error));
@@ -42,7 +43,8 @@ router.post("/createLesson", (req, res) => {
       title,
       description,
       location,
-      participants
+      participants,
+      date
     })
       .then(us => res.status(200).json(us))
       .catch(error => console.log(error));
@@ -52,17 +54,25 @@ router.post("/createLesson", (req, res) => {
 // Edit and Delete Lessons
 
 router.post("/edit", (req, res) => {
-  const { title, description, location, participants } = req.body;
+  const { title, description, location, participants, date } = req.body;
   Lesson.findByIdAndUpdate(
     req.body.id,
     {
       title,
       description,
       location,
-      participants
+      participants,
+      date,
     },
     { new: true }
   )
+    .then(theNewLesson => res.json(theNewLesson))
+    .catch(err => console.log("error!!", err));
+});
+
+router.post("/signUp", (req, res) => {
+  const { participants } = req.body;
+  Lesson.findByIdAndUpdate(req.body.id, { participants }, { new: true })
     .then(theNewLesson => res.json(theNewLesson))
     .catch(err => console.log("error!!", err));
 });
