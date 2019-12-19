@@ -9,6 +9,7 @@ const userSchema = new Schema(
     level: String,
     email: String,
     experience: String,
+    imgPath: String,
     role: {
       type: String,
       enum: ["User", "Teacher"]
