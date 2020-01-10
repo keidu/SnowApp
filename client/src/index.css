@@ -1,0 +1,217 @@
+body {
+  font-weight: 100;
+  background-size: cover;
+}
+.background-signup {
+  background-image: url("./images/background1.jpg");
+  max-width: 2000px;
+  max-height: 2000px;
+  padding: 50px 0px;
+}
+
+.background2 {
+  background-image: url("./images/background2.jpg");
+  max-width: 2000px;
+  max-height: 2000px;
+  padding: 110px 0px;
+  background-size: cover;
+}
+.background-edit-profile {
+  background-image: url("./images/background3.jpg");
+  max-width: 2000px;
+  max-height: 2000px;
+  padding: 170px 0px;
+  background-size: cover;
+}
+
+.background-profile {
+  background-image: url("./images/background-profile.jpg");
+  max-width: 2000px;
+  max-height: 800px;
+  padding: 50px 0px;
+  background-size: cover;
+}
+
+.background-new {
+  background-image: url("./images/background-new.jpg");
+  max-width: 2000px;
+  max-height: 1500px;
+  padding: 120px 0px;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 100;
+}
+
+section {
+  margin: 50px 0;
+}
+
+.navbar-nav a {
+  color: inherit;
+}
+
+.map {
+  width: 50px;
+  height: 50px;
+}
+
+.videoTag {
+  width: 100%;
+}
+
+.form-control {
+  height: 40px;
+  box-shadow: none;
+  color: #969fa4;
+}
+
+.signup-form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.signup-form h1 {
+  color: #636363;
+  position: relative;
+  text-align: center;
+  margin: 0px;
+}
+
+.signup-form form {
+  color: #999;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  background: #f2f3f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+
+.signup-form h1:before,
+.signup-form h1:after {
+  content: "";
+  height: 2px;
+  width: 25%;
+  background: #d4d4d4;
+  position: absolute;
+  top: 50%;
+}
+
+.signup-form h1:before {
+  left: 0;
+}
+
+.signup-form h1:after {
+  right: 0;
+}
+
+.signup-form .btn {
+  background-color: #c3c8cb;
+  border-color: darkgray;
+  margin-left: 100px;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 140px;
+  color: white;
+  outline: none !important;
+}
+
+.signup-form a:hover {
+  text-decoration: none;
+}
+
+.signup-form form a:hover {
+  text-decoration: underline;
+}
+
+.center-me {
+  margin: 100px 40vw;
+}
+
+.logoSmall {
+  height: 35px;
+  width: 110px;
+  margin-right: 30px;
+}
+
+.navbar {
+  background: #dddddd;
+}
+
+.photo-card {
+  width: 30vw;
+  height: 50vw;
+}
+.profile-img {
+  border: 2px solid lightgray;
+  box-shadow: 10px 11px 15px -11px rgba(0, 0, 0, 0.75);
+  width: 31vw;
+  height: 61vh;
+  display: flex;
+  margin-left: 35%;
+  margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+.buttons {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.animate {
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+.action-button {
+  position: relative;
+  padding: 10px 40px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  font-size: 25px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.grey {
+  background-color: #999;
+  text-shadow: 0px -2px rgb(54, 54, 54);
+}
+
+.action-button:active {
+  transform: translate(0px, 5px);
+  -webkit-transform: translate(0px, 5px);
+  border-bottom: 1px solid;
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: darkgrey !important;
+  border-color: darkgrey !important;
+}
+
+.post-card {
+  border: 3px solid darkgray;
+  border-radius: 5px;
+  text-align: center;
+  margin: 50px 0px;
+  box-shadow: 10px 11px 15px -11px rgba(0, 0, 0, 0.75);
+}
+
+.flex {
+  display: flex;
+}
+
+.border {
+  border: 1px solid grey;
+}
