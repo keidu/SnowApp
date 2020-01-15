@@ -1,6 +1,6 @@
 import React from "react";
 import Service from "../../service/Lesson.service";
-import { Container, Row, Modal, Button } from "react-bootstrap";
+import { Container, Row, Modal, Button, Col } from "react-bootstrap";
 import LessonCard from "./LessonCard";
 import NewCalendar from "../lessons/Calendar";
 
@@ -36,15 +36,15 @@ class Dashboard extends React.Component {
 
         this.props.loggedInUser && this.props.loggedInUser.role === "Teacher"
           ? this.setState({
-              lessons: userLessons,
-              ownLessons: ownTeacherLessons,
-              allLessons: allLessonsDB.data
-            })
+            lessons: userLessons,
+            ownLessons: ownTeacherLessons,
+            allLessons: allLessonsDB.data
+          })
           : this.setState({
-              lessons: teacherLessons,
-              ownLessons: ownUserLessons,
-              allLessons: allLessonsDB.data
-            });
+            lessons: teacherLessons,
+            ownLessons: ownUserLessons,
+            allLessons: allLessonsDB.data
+          });
       })
       .catch(err => console.log("Error", err));
   };
@@ -78,9 +78,9 @@ class Dashboard extends React.Component {
     return (
       <>
         <Container>
-          <Container>
+          <div>
             <h1 className="text-center">Dashboard</h1>
-          </Container>
+          </div>
           <div className="flex">
             {this.state.lessons.map(post => (
               <LessonCard
@@ -89,16 +89,15 @@ class Dashboard extends React.Component {
                 DeleteLesson={this.DeleteLessonHandler}
                 loggedInUser={this.props.loggedInUser}
               />
-            ))}
-          </div>
+            ))}</div>
           {this.renderCondition()}
-          <Button
-            onClick={this.handleShow}
-            className="action-button shadow align grey"
-            type="button"
-          >
-            View Calendar
+          <Row className="calendar">
+            <Button
+              onClick={this.handleShow}
+              className="action-button grey"
+              type="button">View Calendar
           </Button>
+          </Row>
         </Container>
         <Modal show={this.state.showModal} onHide={this.handleClose}>
           <Modal.Header closeButton>

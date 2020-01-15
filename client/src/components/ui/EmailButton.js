@@ -19,11 +19,9 @@ class EmailButton extends Component {
   render() {
     return (
       <Button
-        className="border"
-        variant="light"
+        className="action-button shadow  grey"
         target="_blank"
-        onClick={this.onClick}
-      >
+        onClick={this.onClick}>
         Send Mail
       </Button>
     );

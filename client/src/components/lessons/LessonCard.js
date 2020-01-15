@@ -55,8 +55,8 @@ class LessonCard extends Component {
 
   renderEditButton = () => (
     <Link to={`/delete/${this.state._id}`}>
-      <Button className="border" variant="light" type="button">
-        Edit Lesson
+      <Button className="action-button shadow  grey">
+        Edit
       </Button>
     </Link>
   );
@@ -78,7 +78,7 @@ class LessonCard extends Component {
   };
 
   renderSignUpButton = () => (
-    <Button variant="warning" onClick={this.SignUpHandler}>
+    <Button className="action-button shadow  grey" onClick={this.SignUpHandler}>
       Sign up
     </Button>
   );
@@ -109,41 +109,36 @@ class LessonCard extends Component {
       ? this.state.user.email
       : this.state.teacher.email;
     return (
-      <Container className="cards">
-        <Col className="post-card" md={{ span: 10 }}>
-          <h3>{this.state.title}</h3>
-          <p>Descripcion: {this.state.description}</p>
-          <p>Localizacion: {this.state.location}</p>
-          <p>Date: {showDate}</p>
-          <Form.Group>
-            <p>participants: {this.state.participantsRef.length}</p>
-          </Form.Group>
-          <p>mail: {email}</p>
-          {this.renderSendEmailCondition()}
-          {this.renderEditButtonCondition()}
-          {this.renderSignUpCondition()}
-          <Button
-            onClick={this.handleShow}
-            className="border"
-            variant="light"
-            type="button"
-          >
-            Show participants
+      <Container>
+        <Row>
+          <Col className="post-card" md={{ span: 10 }}>
+            <h3>{this.state.title}</h3>
+            <p>Descripcion: {this.state.description}</p>
+            <p>Localizacion: {this.state.location}</p>
+            <p>Date: {showDate}</p>
+            <Form.Group>
+              <p>participants: {this.state.participantsRef.length}</p>
+            </Form.Group>
+            <p>mail: {email}</p>
+            {this.renderSendEmailCondition()}
+            {this.renderEditButtonCondition()}
+            {this.renderSignUpCondition()}
+            <Button
+              onClick={this.handleShow}
+              className="action-button shadow  grey">
+              Participants
           </Button>
-          <Button
-            className="border"
-            variant="light"
-            as={Link}
-            to={`/view/${
-              this.props.creatorIdUser
-                ? this.props.creatorIdUser._id
-                : this.props.creatorIdTeacher._id
-            }`}
-          >
-            Poster profile
+            <Button
+              className="action-button shadow  grey"
+              as={Link}
+              to={`/view/${
+                this.props.creatorIdUser
+                  ? this.props.creatorIdUser._id
+                  : this.props.creatorIdTeacher._id
+                }`}>Poster
           </Button>
-        </Col>
-
+          </Col>
+        </Row>
         <Modal show={this.state.showModal} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Participants</Modal.Title>
@@ -157,8 +152,7 @@ class LessonCard extends Component {
                   variant="light"
                   as={Link}
                   to={`/view/${elm._id}`}
-                >
-                  View profile
+                >View profile
                 </Button>
                 <br></br>
                 <br></br>

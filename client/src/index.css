@@ -28,7 +28,7 @@ body {
   background-image: url("./images/background-profile.jpg");
   max-width: 2000px;
   max-height: 800px;
-  padding: 50px 0px;
+  padding: 130px 0px;
   background-size: cover;
 }
 
@@ -39,6 +39,7 @@ body {
   padding: 120px 0px;
   background-size: cover;
 }
+
 
 h1,
 h2,
@@ -133,6 +134,9 @@ section {
   margin: 100px 40vw;
 }
 
+.calendar{
+  margin: 0px 26vw;
+}
 .logoSmall {
   height: 35px;
   width: 110px;
@@ -147,14 +151,32 @@ section {
   width: 30vw;
   height: 50vw;
 }
+
+.margins {
+  margin: 0px;
+}
+
+.top-margins{
+margin:150px 100px 0px 10%;
+}
+
 .profile-img {
   border: 2px solid lightgray;
   box-shadow: 10px 11px 15px -11px rgba(0, 0, 0, 0.75);
   width: 31vw;
   height: 61vh;
   display: flex;
-  margin-left: 35%;
-  margin-bottom: 30px;
+  margin: 50px 30%;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img-view {
+  border: 2px solid lightgray;
+  box-shadow: 10px 11px 15px -11px rgba(0, 0, 0, 0.75);
+  width: 31vw;
+  height: 61vh;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -162,6 +184,13 @@ section {
 .text-center {
   text-align: center;
 }
+
+
+.align {
+  display: flex;
+  align-items: center;
+}
+
 .buttons {
   margin-top: 0;
   display: flex;
@@ -204,7 +233,7 @@ section {
   border: 3px solid darkgray;
   border-radius: 5px;
   text-align: center;
-  margin: 50px 0px;
+  margin: 50px 50px;
   box-shadow: 10px 11px 15px -11px rgba(0, 0, 0, 0.75);
 }
 

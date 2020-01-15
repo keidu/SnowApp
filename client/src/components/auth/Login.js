@@ -46,7 +46,7 @@ class LoginForm extends Component {
             <Form.Group>
               <Form.Label>Password</Form.Label>
               <Form.Control
-                type="text"
+                type="password"
                 name="password"
                 onChange={this.handleInputChange}
                 value={this.state.password}
