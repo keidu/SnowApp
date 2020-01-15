@@ -151,7 +151,7 @@ class SignupForm extends Component {
               method="post"
               enctype="multipart/form-data"
             >
-              <Form.Label for="file">Imagen de perfil:</Form.Label>
+              <Form.Label for="file">Profile picture:</Form.Label>
               <Form.Control
                 name="imgPath"
                 type="file"

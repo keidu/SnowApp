@@ -16,6 +16,15 @@ class EditUser extends Component {
     };
   }
 
+  handleFileUpload = e => {
+    const uploadData = new FormData();
+    uploadData.append("imgPath", e.target.files[0]);
+    console.log(e.target.files);
+    this.FilesService.handleUpload(uploadData)
+      .then(response => this.setState({ imgPath: response.data.secure_url }))
+      .catch(err => console.log(err));
+  };
+
   handleSubmit = e => {
     e.preventDefault();
     this._service
@@ -49,6 +58,12 @@ class EditUser extends Component {
         onChange={this.handleInputChange}
         value={this.state.experience}
       />
+      <Form.Label for="file">Profile picture:</Form.Label>
+      <Form.Control
+        name="imgPath"
+        type="file"
+        onChange={this.handleFileUpload}
+      />
     </Form.Group>
   );
 
@@ -77,6 +92,12 @@ class EditUser extends Component {
             <option type="text">Medium</option>
             <option type="text">Pro</option>
           </Form.Control>
+          <Form.Label for="file">Profile picture:</Form.Label>
+          <Form.Control
+            name="imgPath"
+            type="file"
+            onChange={this.handleFileUpload}
+          />
         </Form.Group>
       </>
     );

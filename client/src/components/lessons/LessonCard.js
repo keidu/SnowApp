@@ -124,19 +124,19 @@ class LessonCard extends Component {
             {this.renderEditButtonCondition()}
             {this.renderSignUpCondition()}
             <Button
-              onClick={this.handleShow}
-              className="action-button shadow  grey">
-              Participants
-          </Button>
-            <Button
               className="action-button shadow  grey"
               as={Link}
               to={`/view/${
                 this.props.creatorIdUser
                   ? this.props.creatorIdUser._id
-                  : this.props.creatorIdTeacher._id
-                }`}>Poster
+                  : this.props.creatorIdTeacher._id}`}>Poster
           </Button>
+            <Button
+              onClick={this.handleShow}
+              className="action-button shadow  grey">
+              Participants
+          </Button>
+
           </Col>
         </Row>
         <Modal show={this.state.showModal} onHide={this.handleClose}>
